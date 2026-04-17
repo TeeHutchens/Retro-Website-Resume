@@ -1,30 +1,49 @@
 
 body {
- background-color: #BDBDBD;
+  background-color: #BDBDBD;
 }
 
 @keyframes blink {
-  from{
-      opacity: 0%;
-   }
-   to{
-       opacity: 100%;
-    }
+  from { opacity: 0%; }
+  to   { opacity: 100%; }
 }
-.type-writer::after{
-   content: "|";
-animation: blink 1s infinite;
-}
-.type-writer > span{
+
+.type-writer::after {
+  content: "|";
+  animation: blink 1s infinite;
 }
 
 html, body, #root, .container {
-   display: grid;
-   place-items: center;
-   width: 100%;
-   padding-top: 6%;
- }
+  display: grid;
+  place-items: center;
+  width: 100%;
+  padding-top: 6%;
+}
 
 .windowPositioning {
   height: 100%;
+}
+
+.window-stack {
+  position: relative;
+  display: inline-block;
+  min-height: 42rem;
+  min-width: 50rem;
+}
+
+.dock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  margin-top: 16px;
+  padding: 8px 20px;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 101;
 }

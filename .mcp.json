@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "ssh",
+      "args": [
+        "minitee",
+        "PATH=/opt/homebrew/bin:/usr/local/bin:$PATH npx @playwright/mcp --headless --output-dir /tmp/playwright-mcp"
+      ]
+    },
+    "memory": {
+      "command": "ssh",
+      "args": [
+        "minitee",
+        "PATH=/opt/homebrew/bin:/usr/local/bin:$PATH npx @modelcontextprotocol/server-memory"
+      ]
+    }
+  }
+}

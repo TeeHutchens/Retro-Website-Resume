@@ -1,6 +1,6 @@
 const GitHubSvg = () => {
     const handleClick = () => {
-      window.open('https://github.com/TeeHutchy', '_blank', 'noopener,noreferrer');
+      window.open('https://github.com/TeeHutchens', '_blank', 'noopener,noreferrer');
     };
   
     return (

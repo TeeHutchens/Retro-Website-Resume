@@ -1,37 +1,90 @@
+# TaylorHutchens.com — Retro Website Resume
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+A personal resume and portfolio site built with a retro macOS aesthetic. Windows pop open from the dock, minimize with spring animations, and maximize to fullscreen — all in the browser.
+
+## Stack
+
+- **Next.js 14** (App Router, TypeScript)
+- **React 18**
+- **Plain CSS** (no CSS modules, component-scoped files)
+- Deployed at [TaylorHutchens.com](https://taylorhutchens.com)
+
+## Features
+
+- **Bio window** — opens automatically on load with a typing animation and ASCII art header
+- **Projects window** — lists personal projects and hobbies with tag chips
+- **Resume window** — PDF viewer in a mac window chrome, opens from the dock
+- **Easter egg** — closing all windows triggers a warning dialog: "You have deleted all of Taylor's work!"
+- **Dock** — persistent glassmorphism pill with links to Resume, LinkedIn, GitHub, Gmail, and window toggles
+- **Spring animations** — all windows use `cubic-bezier(0.34, 1.56, 0.64, 1)` with a `visibility` delay trick to prevent z-index clipping mid-animation
+- **Maximize** — green traffic light button on each window toggles true fullscreen (`100vw × 100vh`)
+- **Mobile responsive** — windows reflow to full-width at `≤640px`
+
+## Project Structure
+
+```
+src/app/
+  page.tsx                    # Root — manages all window states
+  globals.css                 # Body background, layout, dock, mobile breakpoints
+  components/
+    macWindow.tsx / .css      # Bio window
+    ProjectsWindow.tsx / .css # Projects window
+    ResumeWindow.tsx / .css   # PDF resume window
+    WarningWindow.tsx / .css  # Easter egg dialog
+    asciiArt.tsx              # ASCII name art
+    TypingText.tsx            # Typing animation
+    PdfIcon.tsx               # Dock PDF icon
+    LinkedIn.tsx              # Dock LinkedIn icon
+    GitHub.tsx                # Dock GitHub icon
+    GmailMe.tsx               # Dock Gmail icon
+  constants/
+    string.jsx                # GREETING and BIO text
+    projects.ts               # PROJECTS array (name, description, tags, category)
+    banner.tsx                # ASCII banner art (->->->)
+public/
+  TaylorHutchensResume.pdf    # Resume PDF served at /TaylorHutchensResume.pdf
+```
+
+## Key CSS Patterns
+
+**Spring animation (all popup windows):**
+```css
+.some-window {
+  position: fixed !important;   /* !important — beats .mac-window { position: relative } in bundle order */
+  transform: translate(-50%, -50%) scale(0.08);
+  transform-origin: center center;
+  opacity: 0; visibility: hidden; pointer-events: none;
+  min-height: unset !important; /* beats .mac-window { min-height: 50vh } */
+  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+              opacity 0.3s ease, visibility 0s linear 0.45s;
+}
+.some-window.visible {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1; visibility: visible; pointer-events: auto;
+  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+              opacity 0.3s ease, visibility 0s linear 0s; /* visibility delay = 0 on open */
+}
+```
+
+The `visibility 0s linear 0.45s` delay on close lets the scale animation finish before the element is hidden — without it, z-index collapses and clips the animation early.
+
+**Per-window mac-content overrides:**  
+`.mac-window` globally sets `min-width: 50rem` and `min-height: 38.438rem`. Every popup window overrides these:
+```css
+.warning-window .mac-content { min-width: unset; min-height: unset; width: 100%; }
+.resume-window .mac-content  { min-width: unset; min-height: unset; }
+```
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+To update content, edit:
+- `src/app/constants/string.jsx` — bio text
+- `src/app/constants/projects.ts` — project cards
+- `public/TaylorHutchensResume.pdf` — resume (also update the path in `ResumeWindow.tsx`)

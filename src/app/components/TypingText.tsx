@@ -23,7 +23,7 @@ const TypingBio = () => {
             ]} 
         style={{ 
             fontSize: '1rem',
-            display: 'inline-block/block',
+            display: 'block',
             whiteSpace: "pre-line" }} />
     );
 };

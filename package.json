@@ -2,6 +2,9 @@
   "name": "retro-website",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=24.0.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -13,7 +16,6 @@
     "next": "14.2.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-pdf": "^0.0.10",
     "react-type-animation": "^3.2.0"
   },
   "devDependencies": {

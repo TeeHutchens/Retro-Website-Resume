@@ -34,11 +34,11 @@ export default function Home() {
   // Easter egg: warn when all windows closed
   useEffect(() => {
     if (!hasLoaded.current) return;
-    if (!showBio && !showProjects) {
+    if (!showBio && !showProjects && !showModal) {
       const t = setTimeout(() => setShowWarning(true), 500);
       return () => clearTimeout(t);
     }
-  }, [showBio, showProjects]);
+  }, [showBio, showProjects, showModal]);
 
   return (
     <div className="container">

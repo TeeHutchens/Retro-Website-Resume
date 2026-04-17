@@ -68,3 +68,22 @@
     border-radius: 10px;
     margin-right: 4px;
 }
+
+@media (max-width: 640px) {
+  .projects-window {
+    position: fixed !important;
+    top: 8px !important;
+    left: 8px !important;
+    right: 8px !important;
+    width: calc(100vw - 16px) !important;
+    min-width: unset !important;
+    max-width: unset !important;
+    min-height: unset !important;
+  }
+
+  .projects-content {
+    min-height: unset;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+  }
+}

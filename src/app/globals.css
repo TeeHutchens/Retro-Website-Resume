@@ -47,3 +47,29 @@ html, body, #root, .container {
   position: relative;
   z-index: 101;
 }
+
+@media (max-width: 640px) {
+  html, body, #root, .container {
+    padding-top: 2%;
+    overflow-x: hidden;
+  }
+
+  .windowPositioning {
+    width: 100%;
+  }
+
+  .window-stack {
+    min-width: unset;
+    min-height: unset;
+    width: 100%;
+    display: block;
+  }
+
+  .dock {
+    margin-top: 8px;
+    padding: 6px 12px;
+    gap: 2px;
+    max-width: calc(100vw - 16px);
+    box-sizing: border-box;
+  }
+}

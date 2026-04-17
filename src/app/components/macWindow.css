@@ -107,3 +107,34 @@
     padding: 10px;
     box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
 }
+
+@media (max-width: 640px) {
+  .mac-window {
+    max-width: 100%;
+    min-width: unset;
+    min-height: unset;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .mac-content {
+    min-width: unset;
+    min-height: unset;
+    overflow-x: hidden;
+  }
+
+  .asciiArtName {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .asciiArtName pre {
+    font-size: 0.28rem !important;
+    line-height: 1.3;
+  }
+
+  .typingBio {
+    min-height: unset;
+    font-size: 0.875rem;
+  }
+}

@@ -8,7 +8,6 @@ import WarningWindow from "./components/WarningWindow";
 import PdfIcon from "./components/PdfIcon";
 import LinkedInSvg from "./components/LinkedIn";
 import GitHubSvg from "./components/GitHub";
-import EmailIcon from "./components/GmailMe";
 import { GREETING, BIO } from "./constants/string";
 
 const props = {
@@ -35,11 +34,11 @@ export default function Home() {
   // Easter egg: warn when all windows closed
   useEffect(() => {
     if (!hasLoaded.current) return;
-    if (!showBio && !showProjects) {
+    if (!showBio && !showProjects && !showModal) {
       const t = setTimeout(() => setShowWarning(true), 500);
       return () => clearTimeout(t);
     }
-  }, [showBio, showProjects]);
+  }, [showBio, showProjects, showModal]);
 
   return (
     <div className="container">
@@ -53,7 +52,6 @@ export default function Home() {
           <PdfIcon onClick={() => setShowModal(true)} />
           <LinkedInSvg />
           <GitHubSvg />
-          <EmailIcon />
           <svg onClick={() => setShowBio(v => !v)} xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16" style={{ cursor: 'pointer', padding: '5px' }}>
             <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
           </svg>

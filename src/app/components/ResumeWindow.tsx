@@ -6,7 +6,7 @@ interface ResumeWindowProps {
     onClose: () => void;
 }
 
-const pdf = '/TaylorHutchensResume.pdf';
+const pdf = '/TaylorHutchensResume.pdf#navpanes=0';
 
 const ResumeWindow: React.FC<ResumeWindowProps> = ({ show, onClose }) => {
     const [isMaximized, setIsMaximized] = useState(false);

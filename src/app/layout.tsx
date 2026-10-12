@@ -4,9 +4,15 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const title = "Taylor Hutchens | Senior Full-Stack Software Engineer";
+const description = "Taylor Hutchens is a senior full-stack software engineer in Helena, MT. Resume and side projects.";
+
 export const metadata: Metadata = {
-  title: "TaylorHutchens.com",
-  description: "A Website dedicated to getting him a job.",
+  metadataBase: new URL("https://taylordouglashutchens.com"),
+  title,
+  description,
+  openGraph: { title, description, url: "/", siteName: "Taylor Hutchens", type: "website" },
+  twitter: { card: "summary_large_image", title, description },
 };
 
 export default function RootLayout({

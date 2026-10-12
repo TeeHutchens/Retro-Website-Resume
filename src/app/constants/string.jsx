@@ -12,8 +12,9 @@ export const DEV7 = "I'm a Web Dev";
 export const DEV8 = "I'm an IC";
 export const DEV9 = "I'm an Individual Contributor";
 export const DEVFINAL = "I'm just a guy who likes to make things."
+export const NOW = "whosenews.org, a topo-map Garmin watch face, a Claude Code plugin, and a homelab."
 export const LINKS = "You can find my LinkedIn and GitHub below."
 
-export const P1 = "Hey there! I'm Taylor Hutchens, a software engineer with a passion for crafting innovative solutions. Born in Washington and deeply rooted in Montana, I've spent the last decade turning ideas into reality amidst the stunning landscapes of Big Sky Country.\n\n"
-export const P2 = "With a robust background in software development, my expertise spans a variety of technologies and challenges. This site is my digital showcase—a place to explore my projects, skills, and the journey that brought me here.\n\n"
-export const P3 = "Ready to collaborate or looking for someone to join your team? Dive in and see what I bring to the table. Let's build something amazing together!\n\n"
+export const P1 = "Hey there! I'm Taylor Hutchens, a senior full-stack software engineer at a stealth-stage hedge fund. Born in Washington and rooted in Montana, I've been building software from Helena for over a decade.\n\n"
+export const P2 = "I spent almost nine years at SoFi, where I led the Student Loans team's move from a monolith to microservices. Now I'm the primary engineer building the fund's website from the ground up with .NET, Aspire, Azure and React.\n\n"
+export const P3 = "Outside work I build things for fun: a site that traces who owns the news, a Garmin watch face drawn from USGS elevation data, and a homelab that runs most of my house. They're all in the projects window.\n\n"

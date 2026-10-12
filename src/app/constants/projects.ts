@@ -3,27 +3,55 @@ export interface Project {
   description: string;
   tags: string[];
   category: 'software' | 'hardware' | 'hobby';
+  status?: 'Live' | 'Beta' | 'Active' | 'WIP';
+  updated?: string;
   link?: string;
+  image?: string;
 }
 
 export const PROJECTS: Project[] = [
   {
-    name: 'Retro Website Resume',
-    description: 'This site — personal resume built with Next.js and a retro macOS aesthetic.',
-    tags: ['Next.js', 'React', 'TypeScript'],
+    name: 'Whose News',
+    description: 'Who owns the news you read? Look up a news outlet and see its owners, step by step, with a source for every step.',
+    tags: ['Cloudflare Workers', 'D1', 'Workers AI', 'Embeddings'],
     category: 'software',
+    status: 'Live',
+    updated: 'Oct 2026',
+    link: 'https://whosenews.org',
+    image: '/projects/whosenews.png',
   },
   {
-    name: 'Pi Home Stack',
-    description: 'Raspberry Pi Docker stack with portainer and endless possibilities.',
-    tags: ['Docker', 'Home Assistant', 'Pi-hole', 'Discord Bots', 'WireGuard', 'Sunshine/Moonlight', 'Home NAS'],
+    name: 'TopoDot Watch Face',
+    description: 'Garmin watch face I wear every day: an LED dot-matrix clock over a topo map of Mt. Rainier, with 30+ configurable metrics. Built for AMOLED.',
+    tags: ['Monkey C', 'Connect IQ', 'GDAL', 'USGS elevation data'],
     category: 'hardware',
+    status: 'Beta',
+    updated: 'Sep 2026',
+    link: 'https://teehutchens.github.io/TopoDot/',
+    image: '/projects/topodot.png',
   },
   {
-    name: 'Smart Home Automation',
-    description: 'Automations, smart devices, and scripting to make the home smarter.',
-    tags: ['IoT', 'Automation', 'Scripting', 'Matter', 'Nest', 'Google Home'],
+    name: 'letmespam',
+    description: 'A Claude Code plugin that lets you type out every thought line by line, then send it as one message, optionally condensed by a cheaper model first.',
+    tags: ['Claude Code', 'Plugin', 'Hooks', 'LLMs'],
+    category: 'software',
+    status: 'Live',
+    updated: 'Oct 2026',
+    link: 'https://github.com/TeeHutchens/letmespam',
+  },
+  {
+    name: 'Homelab',
+    description: 'A Raspberry Pi and a Mac Mini running my home: Docker services, smart home automation, Discord bots, and local LLMs with a shared memory server my AI tools use.',
+    tags: ['Docker', 'Raspberry Pi', 'Ollama', 'MCP', 'Home Assistant', 'Pi-hole', 'WireGuard', 'Matter'],
     category: 'hardware',
+    status: 'Active',
+    updated: 'Oct 2026',
+  },
+  {
+    name: 'Trackmania Bot',
+    description: 'Using Openplanet API to build a bot that compares times for the state of Montana and races against friends.',
+    tags: ['API', 'Discord', 'Openplanet'],
+    category: 'software',
   },
   {
     name: 'iPods in 2026',
@@ -32,9 +60,10 @@ export const PROJECTS: Project[] = [
     category: 'hobby',
   },
   {
-    name: 'Trackmania Bot',
-    description: 'Using Openplanet API to build a bot that compares times for the state of Montana and races against friends.',
-    tags: ['API', 'Discord', 'Openplanet'],
+    name: 'Retro Website Resume',
+    description: 'This site — personal resume built with Next.js and a retro macOS aesthetic.',
+    tags: ['Next.js', 'React', 'TypeScript'],
     category: 'software',
+    link: 'https://github.com/TeeHutchens/Retro-Website-Resume',
   },
 ];

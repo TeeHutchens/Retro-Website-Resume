@@ -1,0 +1,110 @@
+<!doctype html>
+<!--
+  Source for public/TaylorHutchensResume.pdf. Kept single-column, real text,
+  standard font, no ligatures/hyphenation/icons so OCR and ATS parsers read it cleanly.
+  Render with Chromium using the CSS page size (Playwright page.pdf({ preferCSSPageSize: true })) to public/TaylorHutchensResume.pdf
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Taylor Hutchens Resume</title>
+<meta name="author" content="Taylor Hutchens">
+<style>
+  @page { size: Letter; margin: 0.45in 0.5in; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 9.5pt;
+    line-height: 1.25;
+    color: #000;
+    background: #fff;
+    font-variant-ligatures: none;
+    font-feature-settings: "liga" 0, "clig" 0;
+    hyphens: none;
+  }
+  a { color: #000; text-decoration: none; }
+  h1 { font-size: 20pt; margin: 0; letter-spacing: 0.5pt; text-align: center; }
+  .role { font-size: 11pt; text-align: center; margin: 2pt 0 3pt; }
+  .contact { text-align: center; margin: 0 0 6pt; white-space: nowrap; }
+  h2 {
+    font-size: 11pt;
+    margin: 8pt 0 3pt;
+    padding-bottom: 1pt;
+    border-bottom: 1pt solid #000;
+    letter-spacing: 0.5pt;
+  }
+  .job { display: flex; justify-content: space-between; gap: 12pt; font-weight: bold; margin-top: 6pt; }
+  .job span:last-child { font-weight: normal; white-space: nowrap; }
+  .team { font-style: italic; margin-top: 3pt; }
+  ul { margin: 2pt 0 0; padding-left: 14pt; }
+  li { margin: 1pt 0; }
+  p { margin: 2pt 0; }
+</style>
+</head>
+<body>
+
+<h1>TAYLOR HUTCHENS</h1>
+<div class="role">Senior Full-Stack Software Engineer</div>
+<div class="contact">
+  Helena, MT | <a href="mailto:taylor.hutchens@proton.me">taylor.hutchens@proton.me</a> |
+  <a href="https://taylordouglashutchens.com">taylordouglashutchens.com</a><br>
+  <a href="https://www.linkedin.com/in/taylor-douglas-hutchens/">linkedin.com/in/taylor-douglas-hutchens</a> |
+  <a href="https://github.com/TeeHutchens">github.com/TeeHutchens</a>
+</div>
+
+<h2>EXPERIENCE</h2>
+
+<div class="job"><span>Stealth Hedgefund | Senior Software Engineer</span><span>Helena, MT | Feb 2024 - Present</span></div>
+<ul>
+  <li>Primary engineer architecting and building the company's website from the ground up, owning features end to end in a fast-moving, stealth-stage startup environment.</li>
+  <li>Developed backend services in C# on .NET with Aspire, deployed through Microsoft Azure for cloud infrastructure, hosting, and monitoring.</li>
+  <li>Built a responsive React frontend integrated with .NET backend services to deliver a polished user experience.</li>
+</ul>
+
+<div class="job"><span>SoFi | Senior Software Engineer (Full Stack)</span><span>Helena, MT | Jun 2018 - Jan 2024</span></div>
+<div class="team">Student Loans Team</div>
+<ul>
+  <li>Team Lead for the transition from a monolithic application to a modern microservice architecture.</li>
+  <li>Partnered closely with design and front-end teams, defining contracts between the front end and back end to specify exactly how every page would look and behave rather than relying on a single generic form.</li>
+</ul>
+<div class="team">Personal Loans Team</div>
+<ul>
+  <li>Implemented new Personal Loans features in partnership with Product and Design.</li>
+  <li>Integrated the Ingo API to automate payments to credit card companies for personal loan debt.</li>
+  <li>Rebuilt transactional emails in Braze, driven by Kafka producers and consumers; monitored and created alerts for time-sensitive and legally required emails.</li>
+</ul>
+<div class="team">Originations Core Team</div>
+<ul>
+  <li>Modernized Operations tools with microservices, streamlining loan approval processes.</li>
+  <li>Collaborated with Operations leads to identify and address application shortcomings.</li>
+</ul>
+
+<div class="job"><span>SoFi | Software Engineer (Full Stack)</span><span>Helena, MT | Jun 2015 - Jun 2018</span></div>
+<div class="team">Operations Team</div>
+<ul>
+  <li>Ensured reliability of applications through full-stack development and support.</li>
+  <li>Built and maintained Operations tools on a Scala, Play Framework, and Java monolith.</li>
+</ul>
+
+<h2>PROJECTS</h2>
+<ul>
+  <li><b>Whose News (whosenews.org):</b> Public site that traces who owns a news outlet, step by step, with a source for every step, across 25,000+ outlets. Cloudflare Workers, D1, Workers AI embeddings, scheduled ingestion jobs.</li>
+  <li><b>TopoDot watch face:</b> Garmin Connect IQ watch face in Monkey C with a custom LED dot-matrix renderer over topographic maps built from USGS elevation data with GDAL; 30+ configurable metrics.</li>
+  <li><b>letmespam (github.com/TeeHutchens/letmespam):</b> Open-source Claude Code plugin that batches multi-line input into one message, with optional condensing by a smaller LLM.</li>
+  <li><b>Homelab:</b> Raspberry Pi and Mac Mini running Docker services, Discord bots, home automation, and local LLMs (Ollama) with a shared MCP memory server.</li>
+</ul>
+
+<h2>TECHNOLOGIES</h2>
+<ul>
+  <li><b>Languages and Frameworks:</b> Java, Kotlin, JavaScript, TypeScript, Python, C#, .NET with Aspire, React, Next.js, Spring Boot, Dropwizard, Play Framework, Monkey C.</li>
+  <li><b>Data and Infrastructure:</b> Postgres, Kafka, gRPC, Redis, REST, SQL, Gradle.</li>
+  <li><b>Cloud and DevOps:</b> Microsoft Azure, Cloudflare Workers and D1, Docker, Kubernetes, GitLab CI/CD, Git.</li>
+  <li><b>Tools:</b> Atlassian Suite, Datadog, Amplitude, Braze, Figma, JetBrains, Claude Code.</li>
+</ul>
+
+<h2>EDUCATION</h2>
+<div class="job"><span>Carroll College | Bachelor of Arts in Software Engineering</span><span>Helena, MT | 2015</span></div>
+
+</body>
+</html>

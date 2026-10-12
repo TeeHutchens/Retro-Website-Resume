@@ -7,7 +7,7 @@ A personal resume and portfolio site built with a retro macOS aesthetic. Windows
 - **Next.js 14** (App Router, TypeScript)
 - **React 18**
 - **Plain CSS** (no CSS modules, component-scoped files)
-- Deployed at [TaylorHutchens.com](https://taylorhutchens.com)
+- Deployed at [taylordouglashutchens.com](https://taylordouglashutchens.com)
 
 ## Features
 

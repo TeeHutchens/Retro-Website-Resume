@@ -2,7 +2,7 @@ import React from 'react';
 
 const EmailIcon = () => {
   const handleEmailClick = () => {
-    window.location.href = 'mailto:taylor.hutchens@gmail.com?subject=Hey Taylor!&body=when can you work for me?';
+    window.location.href = 'mailto:taylor.hutchens@proton.me?subject=Hey Taylor!';
   };
 
   return (

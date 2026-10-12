@@ -32,7 +32,9 @@
 }
 
 .projects-content {
+    min-width: unset;
     min-height: 38.438rem;
+    max-height: 38.438rem;
     padding: 1rem 1.25rem;
     overflow-y: auto;
 }
@@ -83,7 +85,75 @@
 
   .projects-content {
     min-height: unset;
-    max-height: calc(100vh - 120px);
+    max-height: calc(100vh - 130px);
     overflow-y: auto;
+  }
+}
+
+/* Desktop: sits behind the bio window with its title bar peeking out */
+@media (min-width: 641px) {
+  .projects-window.is-front.behind {
+    z-index: 1;
+    transform: translate(5rem, -4rem);
+    cursor: pointer;
+  }
+}
+
+.project-card::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.project-card a {
+    color: inherit;
+}
+
+.project-image {
+    float: right;
+    width: 7rem;
+    height: 7rem;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 6px;
+    margin-left: 1rem;
+    border: 1px solid #e8e8e8;
+}
+
+.status-chip {
+    font-size: 0.7rem;
+    font-weight: normal;
+    padding: 1px 7px;
+    border-radius: 10px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.status-live { background: #d9f2df; color: #1e6b34; }
+.status-beta { background: #e2ebfa; color: #24508f; }
+.status-active { background: #fdf0d2; color: #7a5400; }
+.status-wip { background: #efefef; color: #555; }
+
+.project-card strong a,
+.project-updated {
+    white-space: nowrap;
+}
+
+.project-updated {
+    font-size: 0.7rem;
+    font-weight: normal;
+    color: #888;
+    margin-left: 8px;
+}
+
+@media (max-width: 640px) {
+  .project-image {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  .project-updated {
+    display: block;
+    margin: 2px 0 0;
   }
 }

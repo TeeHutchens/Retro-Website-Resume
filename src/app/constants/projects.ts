@@ -12,8 +12,8 @@ export interface Project {
 export const PROJECTS: Project[] = [
   {
     name: 'Whose News',
-    description: 'Who owns the news you read? Look up a news outlet and see its owners, step by step, with a source for every step.',
-    tags: ['Cloudflare Workers', 'D1', 'Workers AI', 'Embeddings'],
+    description: 'Who owns the news you read? Look up a news outlet and see its owners, step by step, with a source for every step. Coming soon: a lightweight PWA that uses RSS feeds to group stories by topic, and works with any RSS feed.',
+    tags: ['Cloudflare Workers', 'D1', 'Workers AI', 'Embeddings', 'RSS', 'PWA'],
     category: 'software',
     status: 'Live',
     updated: 'Oct 2026',
